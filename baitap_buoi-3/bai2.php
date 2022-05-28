@@ -37,11 +37,11 @@
           <div class="mb-3">
             <label >Gender</label>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male">
+              <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male">
               <label class="form-check-label" for="inlineRadio1">Male</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female">
+              <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female">
               <label class="form-check-label" for="inlineRadio2">Female</label>
             </div>
             
@@ -79,6 +79,7 @@
         $fname = $_POST['firstname'];
         $lname = $_POST['lastname'];
         
+        
         if($name =="")
         {
           $errors['fname']="Firstname không được để trống";
@@ -87,9 +88,40 @@
         {
           $errors['lname']="Lastname không được để trống";
         }
-        
-      }
 
+      }
+      if (count($errors) == 0 )
+      {
+        $email = $_POST['email'];
+        echo $fname;
+        echo $lname;
+        
+        $gender = $_POST['gender'];
+        if ($gender == 1) 
+        {
+          echo 'Male';
+        }
+        else 
+        {
+          echo 'Female';
+        }
+        $checkboxArr = $_POST['checkbox']; //name of field
+        foreach ($checkboxArr as $checkbox) {
+        if ($checkbox == 1) 
+        {
+          echo 'Check1';
+        }
+        else if ($checkbox == 2) 
+        {
+          echo 'Check2';
+        }
+        else 
+        {
+          echo 'Check3';
+        }
+}
+
+      }
     }
   ?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
