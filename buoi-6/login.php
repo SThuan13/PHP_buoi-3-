@@ -16,36 +16,34 @@
       background: #b9eaeb;
     }
   </style>
-  <div class=" container my-5 ">
-    <div class=" d-flex justify-content-md-center">
-      <div class="col-6">
-      <div class="content ">
-        <form method="post" >
-          <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" name="username" class="form-control" id="username" >
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" name="password" class="form-control" id="password">
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" name="remember_me" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Remember me</label>
-          </div>
-          <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-        </form>
-        <div>
-        <?php main();?>
-        <h3>
-        `<?php showError();?>
-        </h3>
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-6 ">
+        <div class="content">
+          <form method="post"  class="form p-5">
+            <?php main();?>
+            <?php showError();?>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" name="remmember_me" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Remmember me</label>
+            </div>
+            <button type="submit" name="submit" class="btn btn-success">Submit</button>
+          </form>
+          
+        </div>
         
       </div>
+      
     </div>
     
-        
-    </div>
     </div>
     
     
