@@ -126,14 +126,14 @@
       {
         setError(3); $error_count += 1;
       }
-      if ($_POST['cPassword'] != $_POST['password']) 
+      if (($_POST['cPassword'] != $_POST['password'])||( $_POST['cPassword'] =="")) 
       {
         setError(4); $error_count += 1;
       }
-      // if ($_POST['img'] == "" )
-      // {
-      //   setError(5); $error_count += 1;
-      // }
+      if (isset($_POST['img']))
+      {
+        setError(5); $error_count += 1;
+      }
       if ($error_count == 0)
       {
         if(!file_exists('storage'))
@@ -170,7 +170,6 @@
           echo "Địng dạng file: ".$ext; echo "<br>";
           echo "Đường dẫn file trên project của bạn:" .$filePath; echo "<br>";
           echo "Kích thước file (Tính bằng Mb: ".($file['size']/1000000); echo "<br>";
-          
         }
       }
     
